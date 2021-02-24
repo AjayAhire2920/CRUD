@@ -1,0 +1,85 @@
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown button
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+
+<div class="jumbotron">
+    <form  [formGroup]="regForm"  (ngSubmit)="onSubmit(regForm.value)">
+    <div class="container text-center">
+        <h2 class="bg-white col-md-4 mx-auto" >CRUD OPERATIONS</h2>
+    </div>
+
+    <div id="insertArea" class="col-md-4 mx-auto ">
+        <div class="text-center mt-4">
+            <div>
+                <label for="Name">
+                    <input id="name" type="text" placeholder="Name" class="form-control" formControlName="Name" >
+                </label>
+                <label for="Surname">
+                    <input id="surname" type="text" placeholder="Surname" class="form-control" formControlName="Surname"  >
+                </label>
+            </div>
+            <div>
+                <label for="Nationality">
+                    <input id="nation" type="text" placeholder="Nationality" class="form-control" formControlName="Nationality"  >
+                </label>
+                <label for="Contact">
+                    <input id="phone" type="text" placeholder="Contact" class="form-control"  formControlName="Contact" >
+                     </label>
+               </div>
+        
+           
+                     <button type="submit" class="btn btn-outline-primary">submit</button>
+               </div>
+           </div>
+      </form>       
+    </div>
+
+
+    <div class="addOperation col-md-4 ml-auto pb-2">
+        <button class="btn btn-outline-primary" (click)="new()" >Create New Post</button>
+    </div>  
+        <div id="tableShowHide" class="format text-center mt-5" >
+               
+      
+            <div  class="table-reponsive  bg-light"  >
+                <table id="tableAreaData"   class="table"> 
+                    <thead>
+                        <tr>
+                            <th>Sr.No:</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Nationality</th>
+                            <th>Contact</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let empLists of empList">
+                            <td>{{empLists.Name}}</td>
+                            <td>{{empLists.Name}}</td>
+                            <td>{{empLists.Name}}</td>
+                            <td>{{empLists.Name}}</td>
+                            <td>{{empLists.Name}}</td>
+                            <td><button class="sm-btn btn-outline-info">View</button> &nbsp;
+                                <button class="sm-btn btn-outline-secondary">Edit</button> &nbsp;
+                                <button class="sm-btn btn-outline-danger">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       
+ 
+   
+ 
+
+
+
+ 
