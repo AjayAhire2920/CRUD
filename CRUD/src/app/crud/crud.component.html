@@ -15,7 +15,7 @@
         <h2 class="bg-white col-md-4 mx-auto" >CRUD OPERATIONS</h2>
     </div>
 
-    <div id="insertArea" class="col-md-4 mx-auto ">
+    <div id="insertArea" class="col-md-4 mx-auto  ">
         <div class="text-center mt-4">
             <div>
                 <label for="Name">
@@ -48,9 +48,9 @@
         <div id="tableShowHide" class="format text-center mt-5" >
                
       
-            <div  class="table-reponsive  bg-light"  >
-                <table id="tableAreaData"   class="table"> 
-                    <thead>
+            <div  class="table-reponsive  bg-light mb-5 "  >
+                <table id="tableAreaData"   class="table table-striped"> 
+                    <thead class="bg-info text-white">
                         <tr>
                             <th>Sr.No:</th>
                             <th>Name</th>
@@ -62,13 +62,13 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let empLists of empList">
+                            <td>{{empLists.Sr}}</td>
                             <td>{{empLists.Name}}</td>
-                            <td>{{empLists.Name}}</td>
-                            <td>{{empLists.Name}}</td>
-                            <td>{{empLists.Name}}</td>
-                            <td>{{empLists.Name}}</td>
+                            <td>{{empLists.Surname}}</td>
+                            <td>{{empLists.Nationality}}</td>
+                            <td>{{empLists.Contact}}</td>
                             <td><button class="sm-btn btn-outline-info">View</button> &nbsp;
-                                <button class="sm-btn btn-outline-secondary">Edit</button> &nbsp;
+                                <button (click)="edit()"  class="sm-btn btn-outline-secondary"  data-toggle="modal" data-target="#exampleModal">Edit</button> &nbsp;
                                 <button class="sm-btn btn-outline-danger">Delete</button></td>
                         </tr>
                     </tbody>
@@ -77,8 +77,53 @@
         </div>
        
  
-   
+       <!-- Button trigger modal -->
  
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">EDIT</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <table id="tableAreaData"   class="table table-striped"> 
+                <thead class="bg-info text-white">
+                    <tr>
+                        <th>Sr.No:</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Nationality</th>
+                        <th>Contact</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td>{{empLists.Sr}}</td>
+                        <td>{{empLists.Name}}</td>
+                        <td>{{empLists.Surname}}</td>
+                        <td>{{empLists.Nationality}}</td>
+                        <td>{{empLists.Contact}}</td>
+                     
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
 
 
 

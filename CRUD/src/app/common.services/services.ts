@@ -5,7 +5,7 @@
  import { Observable } from 'rxjs';
  
  
- const BACKEND_URL = "http://localhost:3000/"
+ const BACKEND_URL = "http://localhost:4000/"
 
 
 @Injectable({providedIn: "root"})
@@ -17,7 +17,7 @@ constructor( private http: HttpClient , private Router: Router){}
 
 
 public  employeeForm(body){
-    alert("response 1")
+    alert("got response")
     const url = BACKEND_URL + 'register';
     return this.http.post(url,body,{responseType:'json'}).pipe(map(res => {
         console.log(res);
@@ -30,7 +30,7 @@ public  employeeForm(body){
 
 
 public getEmployeeForm(){
-     
+    
     const url = BACKEND_URL + 'getdata';
     return this.http.get(url,{responseType:'json'}).pipe(map(res => {
         console.log(res);
@@ -38,6 +38,15 @@ public getEmployeeForm(){
     }));
 }
 
+
+public updateEmployeeForm(){
+     alert("response came")
+    const url = BACKEND_URL + 'updatedata';
+    return this.http.get(url,{responseType:'json'}).pipe(map(res => {
+        console.log(res);
+        return res;
+    }));
+}
 
 
 

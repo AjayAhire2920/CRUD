@@ -18,6 +18,7 @@ export class CRUDComponent implements OnInit {
   ngOnInit() {
 
     this.regForm = this.fb.group({
+      Sr:[''],
       Name: [''],
       Surname: [''],
       Nationality:[''],
@@ -36,12 +37,9 @@ export class CRUDComponent implements OnInit {
 
 
   onSubmit = function(regForm: HTMLInputElement){
-  alert("1")
-
-  this.submitted = true;
-  if(this.regForm.invalid){
-    return;
-  }
+   
+ alert("hey done")
+   
 
   this.Service.employeeForm(regForm).subscribe(data => {
     console.log(data);
@@ -53,7 +51,7 @@ export class CRUDComponent implements OnInit {
 }
 
 new(){
-  alert("clicked")
+  
   $('#insertArea').show()
 }
 
@@ -70,6 +68,22 @@ getregister(){
 
 }
 
+
+edit(){
+   this.updateregister();
+}
+
+updateregister(){ 
+  this.Service.updateEmployeeForm().subscribe(Response => {
+    console.log(Response);
+    if(Response.status == "1"){
+    
+      this.empList = Response.data;
+       
+    }
+  });
+
+}
 
 
 
