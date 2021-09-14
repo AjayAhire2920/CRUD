@@ -54,9 +54,7 @@ app.use((req, res, next) => {
 });
 
 
-app.post('/register', function (req, res) {
- 
-  
+app.post('/register', function (req, res) { 
     console.log("++++++++++++++++++++++++++++"+JSON.stringify(req.body))
     mc.query("INSERT INTO `employeedata` (`Name`, `Surname`, `Nationality`, `Contact`) VALUES (  '"+req.body.Name+"', '"+req.body.Surname+"', '"+req.body.Nationality+"', '"+req.body.Contact+"')",  function (err, res1) {
         if(err) {
